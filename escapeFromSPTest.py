@@ -76,26 +76,141 @@ NOMEZONA = ''
 EXAMINAR = 'examinar'
 DESCRICAO = 'descricao'
 SOLUCIONADO = False
-ACIMA = 'up', 'acima', 'cima', 'w'
-ABAIXO = 'down', 'abaixo', 'baixo', 's'
-ESQUERDA = 'left', 'esquerda', 'a'
-DIREITA = 'right', 'direita', 'd'
+OPCAOA = '1', 'a', 'bom'
+OPCAOB = '2', 'b', 'neutro bom'
+OPCAOC = '3', 'c', 'neutro mal'
+OPCAOD = '4', 'd', 'mal'
 
-lugaresSolucionados = {'a1': False, 'a2': False, 'a3': False, 'a4': False,
-                       'b1': False, 'b2': False, 'b3': False, 'b4': False,
-                       'c1': False, 'c2': False, 'c3': False, 'c4': False,
-                       }
+historia = {'a1': False, 'b1': False, 'c1': False, 'd1': False,
+            'a2': False, 'b2': False, 'c2': False, 'd2': False,
+            'a3': False, 'b3': False, 'c3': False, 'd3': False,
+            'a': False, 'b': False, 'c': False, 'd': False,
+            }
 
-mapa = {
+# historiaAntiga = {'a1': False, 'a2': False, 'a3': False, 'a4': False,
+#                   'b1': False, 'b2': False, 'b3': False, 'b4': False,
+#                   'c1': False, 'c2': False, 'c3': False, 'c4': False,
+#                   }
+
+progressao = {
     'a1': {
         NOMEZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
-        ACIMA: 'up' or 'acima' or 'cima' 'w',
-        ABAIXO: 'down' or 'abaixo' or 'baixo' or 's',
-        ESQUERDA: 'left' or 'esquerda' or 'a',
-        DIREITA: 'right' or 'direita' or 'd'
-
+        OPCAOA: 'a2',
+        OPCAOB: 'b2',
+        OPCAOC: '',
+        OPCAOD: ''
+    },
+    'b1': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: 'a2',
+        OPCAOB: 'b2',
+        OPCAOC: 'c2',
+        OPCAOD: ''
+    },
+    'c1': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: '',
+        OPCAOB: 'b2',
+        OPCAOC: 'c2',
+        OPCAOD: 'd2'
+    },
+    'd1': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: '',
+        OPCAOB: '',
+        OPCAOC: 'c2',
+        OPCAOD: 'd2'
+    },
+    'a2': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: 'a3',
+        OPCAOB: 'b3',
+        OPCAOC: '',
+        OPCAOD: ''
+    },
+    'b2': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: 'a3',
+        OPCAOB: 'b3',
+        OPCAOC: 'c3',
+        OPCAOD: ''
+    },
+    'c2': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: '',
+        OPCAOB: 'b3',
+        OPCAOC: 'c3',
+        OPCAOD: 'd3'
+    },
+    'd2': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: '',
+        OPCAOB: '',
+        OPCAOC: 'c2',
+        OPCAOD: 'd2'
+    },
+    'a3': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: 'a',
+        OPCAOB: '',
+        OPCAOC: '',
+        OPCAOD: ''
+    },
+    'b3': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: '',
+        OPCAOB: 'b',
+        OPCAOC: '',
+        OPCAOD: ''
+    },
+    'c3': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: '',
+        OPCAOB: '',
+        OPCAOC: 'c',
+        OPCAOD: ''
+    },
+    'd3': {
+        NOMEZONA: "",
+        EXAMINAR: "examinar",
+        DESCRICAO: 'descricao',
+        SOLUCIONADO: False,
+        OPCAOA: '',
+        OPCAOB: '',
+        OPCAOC: '',
+        OPCAOD: 'd'
     }
 }
