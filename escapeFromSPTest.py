@@ -7,7 +7,7 @@ import os
 import time
 import random
 
-larguraTela = 100
+larguraTela = 200
 
 
 # Configuração do Jogador
@@ -18,7 +18,7 @@ class Jogador:
         self.vida = 0
         self.mana = 0
         self.estado = []
-        self.localizacao = ''
+        self.local = 'inicio'
 
 
 meuJogador = Jogador()
@@ -47,24 +47,24 @@ def telaDeSelecao():
 
 def tela():
     os.system('clear')
-    print('############################')
-    print('#  Escape From São Paulo!  #')
-    print('############################')
-    print('         - Play  -          ')
-    print('         - Menu  -          ')
-    print('         - Quit  -          ')
-    print('   Copyright 2022 AZ0iC.me  ')
+    print('########################################################')
+    print('#                Escape From São Paulo!                #')
+    print('########################################################')
+    print('|                      - Play -                        |')
+    print('|                      - Menu -                        |')
+    print('|                      - Quit -                        |')
+    print('|_______________Copyright 2022 AZ0iC.me________________|')
     telaDeSelecao()
 
 
 def menu():
-    print('############################')
-    print('#  Escape From São Paulo!  #')
-    print('############################')
-    print('Este jogo funciona com      ')
-    print('comandos escritos aprendidos')
-    print('durante o jogo, ANOTE tudo! ')
-    print('Boa sorte e não morra.      ')
+    print('########################################################')
+    print('#                Escape From São Paulo!                #')
+    print('########################################################')
+    print('Este jogo funciona com comandos escritos aprendidos     ')
+    print('durante o jogo, ANOTE se quiser. A maioria dos comandos ')
+    print('sera descrito, mas não custa nada tentar algo diferente.')
+    print('Boa sorte e não morra.                                  ')
     telaDeSelecao()
 
 
@@ -72,7 +72,15 @@ def jogar():
     pass
 
 
-NOMEZONA = ''
+def movimentoJogador():
+    pass
+
+
+def interacaoJogador():
+    pass
+
+
+ZONA = ''
 EXAMINAR = 'examinar'
 DESCRICAO = 'descricao'
 SOLUCIONADO = False
@@ -92,9 +100,22 @@ historia = {'a1': False, 'b1': False, 'c1': False, 'd1': False,
 #                   'c1': False, 'c2': False, 'c3': False, 'c4': False,
 #                   }
 
+
 progressao = {
+    'inicio': {
+        ZONA: "Zona Inicial",
+        EXAMINAR: "examinar",
+        DESCRICAO: '''Veremos como fica a descrição     | 
+  printada no terminal para regular | 
+  a descrição e que fique bonita.  ''',
+        SOLUCIONADO: False,
+        OPCAOA: 'a1',
+        OPCAOB: 'b1',
+        OPCAOC: 'c1',
+        OPCAOD: 'd1'
+    },
     'a1': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -104,7 +125,7 @@ progressao = {
         OPCAOD: ''
     },
     'b1': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -114,7 +135,7 @@ progressao = {
         OPCAOD: ''
     },
     'c1': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -124,7 +145,7 @@ progressao = {
         OPCAOD: 'd2'
     },
     'd1': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -134,7 +155,7 @@ progressao = {
         OPCAOD: 'd2'
     },
     'a2': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -144,7 +165,7 @@ progressao = {
         OPCAOD: ''
     },
     'b2': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -154,7 +175,7 @@ progressao = {
         OPCAOD: ''
     },
     'c2': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -164,7 +185,7 @@ progressao = {
         OPCAOD: 'd3'
     },
     'd2': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -174,7 +195,7 @@ progressao = {
         OPCAOD: 'd2'
     },
     'a3': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -184,7 +205,7 @@ progressao = {
         OPCAOD: ''
     },
     'b3': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -194,7 +215,7 @@ progressao = {
         OPCAOD: ''
     },
     'c3': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -204,7 +225,7 @@ progressao = {
         OPCAOD: ''
     },
     'd3': {
-        NOMEZONA: "",
+        ZONA: "",
         EXAMINAR: "examinar",
         DESCRICAO: 'descricao',
         SOLUCIONADO: False,
@@ -214,3 +235,44 @@ progressao = {
         OPCAOD: 'd'
     }
 }
+
+
+def localizacao():
+    print('\n' + ('#' * (4 + len(meuJogador.local))))
+    print('# ' + meuJogador.local.upper() + ' #')
+    print('| ' + progressao[meuJogador.local][DESCRICAO] + ' |')
+    print('\n' + ('#' * (4 + len(meuJogador.local))))
+
+
+def prompt():
+    print("\n" + "=============================")
+    print("O que você vai fazer?")
+    acao = input("> ")
+
+    acaoValida = [
+        'mover',
+        'ir',
+        'viajar',
+        'caminhar',
+        'sair',
+        'examinar',
+        'inspecionar',
+        'interagir',
+        'olhar'
+    ]
+    while acao.lower() not in acaoValida:
+        print('Ação desconhecida, tente novamente.\n')
+        acao = input("> ")
+    if acao.lower() == 'sair':
+        sys.exit()
+    elif acao.lower() in ['mover', 'ir', 'viajar', 'caminhar', ]:
+        movimentoJogador()  # acao.lower()
+    elif acao.lower() in ['examinar', 'inspecionar', 'interagir', 'olhar']:
+        interacaoJogador()
+
+
+def iniciarJogo():
+    return
+
+
+print(prompt())
