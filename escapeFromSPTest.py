@@ -46,14 +46,17 @@ def telaDeSelecao():
 
 
 def tela():
-    os.system('clear')
-    print('########################################################')
-    print('#                Escape From São Paulo!                #')
-    print('########################################################')
-    print('|                      - Play -                        |')
-    print('|                      - Menu -                        |')
-    print('|                      - Quit -                        |')
-    print('|_______________Copyright 2022 AZ0iC.me________________|')
+    # os.system('cls')
+    print('  ↬⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇼⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺↫')
+    print('  |             ◐  Circus of Dark Madness ◑                |')
+    print('  ╚►⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇼⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺◄╝')
+    print('  §                                                         §')
+    print('  §                         þlay                            §')
+    print('  §                         ℳenu                           §')
+    print('  §                         φuit                            §')
+    print('  §                                                         §')
+    print('  ╚►⇻⇻⇻⇻⇻⇻⇻⇻Creative commons © - 2022 - AZ0iC⇺⇺⇺⇺⇺⇺⇺⇺◄╝')
+    print('')
     telaDeSelecao()
 
 
@@ -275,4 +278,4 @@ def iniciarJogo():
     return
 
 
-print(prompt())
+print(tela())
