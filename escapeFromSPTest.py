@@ -1,4 +1,5 @@
 # Teste de RPG baseado em Texto usando Pygame
+#
 
 import cmd
 import textwrap
@@ -11,6 +12,8 @@ larguraTela = 200
 
 
 # Configuração do Jogador
+
+# TODO Criar um arquivo para cada classe
 
 class Jogador:
     def __init__(self):
@@ -25,11 +28,11 @@ meuJogador = Jogador()
 
 
 # Tela de título
-
+# TODO Criar um arquivo dentro da VIEWMODEL/VIEWCONTROLLER.
 def telaDeSelecao():
     opcao = input("> ")
     if opcao.lower() == "play":
-        jogar()  # Placeholder
+        jogar()
     elif opcao.lower() == "menu":
         menu()
     elif opcao.lower() == "quit":
@@ -38,51 +41,55 @@ def telaDeSelecao():
         print("Por favor digite um comando válido.")
         opcao = input("> ")
         if opcao.lower() == "play":
-            jogar()  # Placeholder
+            jogar()
         elif opcao.lower() == "menu":
             menu()
         elif opcao.lower() == "quit":
             sys.exit()
 
 
+# TODO Criar um arquivo separado na VIEW.
 def tela():
     # os.system('cls')
     print('  ↬⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇼⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺↫')
-    print('  |             ◐  Circus of Dark Madness ◑                |')
+    print('  |              ◐  Circus of Dark Madness ◑               |')
     print('  ╚►⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇼⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺◄╝')
     print('  §                                                         §')
     print('  §                         þlay                            §')
     print('  §                         ℳenu                           §')
     print('  §                         φuit                            §')
     print('  §                                                         §')
-    print('  ╚►⇻⇻⇻⇻⇻⇻⇻⇻Creative commons © - 2022 - AZ0iC⇺⇺⇺⇺⇺⇺⇺⇺◄╝')
-    print('')
+    print('  ╚►⇻⇻⇻⇻⇻⇻⇻⇻Creative commons © - 2022 - AZ0iC⇺⇺⇺⇺⇺⇺⇺⇺◄╝\n')
     telaDeSelecao()
 
 
+# TODO Adicionar na VIEW.
 def menu():
-    print('########################################################')
-    print('#                Escape From São Paulo!                #')
-    print('########################################################')
-    print('Este jogo funciona com comandos escritos aprendidos     ')
-    print('durante o jogo, ANOTE se quiser. A maioria dos comandos ')
-    print('sera descrito, mas não custa nada tentar algo diferente.')
-    print('Boa sorte e não morra.                                  ')
+    print('  ↬⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇼⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺↫')
+    print('  |               ◑ Circus of Dark Madness ◐               |')
+    print('  ╚►⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇻⇼⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺⇺◄╝')
+    print('  §                                                         §')
+    print('  § Este jogo funciona com comandos escritos aprendidos     §')
+    print('  § durante o jogo, ANOTE se quiser. A maioria dos comandos §')
+    print('  § sera descrito, mas não custa nada tentar algo diferente.§')
+    print('  § Boa sorte e não morra.                                  §')
+    print('  ╚►⇻⇻⇻⇻⇻⇻⇻⇻Creative commons © - 2022 - AZ0iC⇺⇺⇺⇺⇺⇺⇺⇺◄╝\n')
     telaDeSelecao()
 
 
 def jogar():
-    pass
+    pass  # placeholder
 
 
 def movimentoJogador():
-    pass
+    pass  # placeholder
 
 
 def interacaoJogador():
-    pass
+    pass  # placeholder
 
 
+# TODO Criar um arquivo chamado linhaDoTempoModel
 ZONA = ''
 EXAMINAR = 'examinar'
 DESCRICAO = 'descricao'
@@ -92,19 +99,21 @@ OPCAOB = '2', 'b', 'neutro bom'
 OPCAOC = '3', 'c', 'neutro mal'
 OPCAOD = '4', 'd', 'mal'
 
-historia = {'a1': False, 'b1': False, 'c1': False, 'd1': False,
+historia = {'inicio': False,
+            'a1': False, 'b1': False, 'c1': False, 'd1': False,
             'a2': False, 'b2': False, 'c2': False, 'd2': False,
             'a3': False, 'b3': False, 'c3': False, 'd3': False,
             'a': False, 'b': False, 'c': False, 'd': False,
             }
 
-# historiaAntiga = {'a1': False, 'a2': False, 'a3': False, 'a4': False,
+# metodoAntigo = {'a1': False, 'a2': False, 'a3': False, 'a4': False,
 #                   'b1': False, 'b2': False, 'b3': False, 'b4': False,
 #                   'c1': False, 'c2': False, 'c3': False, 'c4': False,
-#                   }
+#                   } Movimentação não é intuitiva
 
 
 progressao = {
+    # TODO Criar os finais A B C e D.
     'inicio': {
         ZONA: "Zona Inicial",
         EXAMINAR: "examinar",
@@ -268,14 +277,36 @@ def prompt():
         acao = input("> ")
     if acao.lower() == 'sair':
         sys.exit()
-    elif acao.lower() in ['mover', 'ir', 'viajar', 'caminhar', ]:
-        movimentoJogador()  # acao.lower()
+    elif acao.lower() in ['mover', 'ir', 'viajar', 'caminhar']:
+        escolha(acao.lower())
     elif acao.lower() in ['examinar', 'inspecionar', 'interagir', 'olhar']:
         interacaoJogador()
+
+
+def escolha(minhaAcao):
+    pergunta = "O que você vai fazer?"
+    destino = input(pergunta)
+    if destino.lower() in ['1', 'a', 'bom']:
+        destinado = progressao[meuJogador.local][OPCAOA]
+        manipuladorDeEscolhas()
+    elif destino.lower() in ['2', 'b', 'neutro bom']:
+        destinado = progressao[meuJogador.local][OPCAOB]
+        manipuladorDeEscolhas()
+    elif destino.lower() in ['3', 'c', 'neutro mal']:
+        destinado = progressao[meuJogador.local][OPCAOB]
+        manipuladorDeEscolhas()
+    elif destino.lower() in ['4', 'd', 'mal']:
+        destinado = progressao[meuJogador.local][OPCAOB]
+        manipuladorDeEscolhas()
+
+
+def manipuladorDeEscolhas():
+    pass
+
 
 
 def iniciarJogo():
     return
 
 
-print(tela())
+tela()
