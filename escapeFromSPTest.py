@@ -109,7 +109,7 @@ historia = {'inicio': False,
 # metodoAntigo = {'a1': False, 'a2': False, 'a3': False, 'a4': False,
 #                   'b1': False, 'b2': False, 'b3': False, 'b4': False,
 #                   'c1': False, 'c2': False, 'c3': False, 'c4': False,
-#                   } Movimentação não é intuitiva
+#                   } a progreção não é intuitiva
 
 
 progressao = {
@@ -248,7 +248,7 @@ progressao = {
     }
 }
 
-
+# sujeito a refatoração para retirada de prints e transformar em metodo de fato
 def localizacao():
     print('\n' + ('#' * (4 + len(meuJogador.local))))
     print('# ' + meuJogador.local.upper() + ' #')
@@ -283,7 +283,7 @@ def prompt():
         interacaoJogador()
 
 
-def escolha(minhaAcao):
+def escolha():
     pergunta = "O que você vai fazer?"
     destino = input(pergunta)
     if destino.lower() in ['1', 'a', 'bom']:
@@ -300,9 +300,17 @@ def escolha(minhaAcao):
         manipuladorDeEscolhas()
 
 
-def manipuladorDeEscolhas():
-    pass
+def manipuladorDeEscolhas(destinado):
+    print("\n Você escolheu " + destinado + ".")
+    meuJogador.local = destinado
+    localizacao()
 
+
+def jogadorExamina(acao):
+    if progressao[meuJogador.local][SOLUCIONADO]:
+        print("Ja solucionado")
+    else:
+        print("Deposite seu pussle aqui")
 
 
 def iniciarJogo():
